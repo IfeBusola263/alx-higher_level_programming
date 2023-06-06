@@ -11,15 +11,15 @@ def remove_char_at(str, n):
     >>> remove_char_at("Python", -2)
     Python
     '''
-    ret = []
-# check if n is negative index and store all the characters in the list
+    ret = ''
+# check if n is negative index and concatenate each char to the empty string
     if n < 0:
         for i in range(len(str)):
-            ret.append(str[i])
+            ret += str[i]
         return ret
-# if n is not negative fill the list excluding index n
+# if n is not negative concatenate with empty string, excluding index n
     else:
         for i in range(len(str)):
             if i != n:
-                ret.append(str[i])
+                ret += str[i]
         return ret
