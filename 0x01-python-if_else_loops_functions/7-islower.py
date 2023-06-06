@@ -1,5 +1,8 @@
+#!/usr/bin/python3
+
 def islower(c):
-    """ Returns True if character c is lower and false otherwise
+    """ Returns True if character c is lower and false otherwise.
+
     >>> islower("a")
     'True'
     >>> islower("A")
