@@ -12,6 +12,10 @@ def print_last_digit(number):
 
     if number < 0:
         number = number * -1
-        return number % 10
+        last_digi = number % 10
+        print("{}".format(last_digi), end='')
+        return last_digi
     else:
-        return number % 10
+        last_digi = number % 10
+        print("{}".format(last_digi), end='')
+        return last_digi
