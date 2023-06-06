@@ -16,5 +16,3 @@ def uppercase(str):
 # if it is not print it as is
         else:
             print("{}".format(str[i]), end='')
-# print a new line
-    print()
