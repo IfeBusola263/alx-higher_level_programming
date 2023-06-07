@@ -15,5 +15,5 @@ def uppercase(str):
         # if small letter convert, if not, just print the character
         print("{:c}".format(ord(str[i]) - 32) if check else str[i], end='')
 
-    # Print the new line after words, since i have ceased the newlne with end
+    # display the new line after words, since i have ceased the newlne with end
     print()
