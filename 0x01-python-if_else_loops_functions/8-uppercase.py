@@ -9,13 +9,6 @@ def uppercase(str):
     '''
 # Loop through each character
     for i in range(len(str)):
-
-        # if the character is within the small letter ascii alphabets, convert.
-        if ord(str[i]) >= 97 or ord(str[i]) <= 122:
-
-            # convert it to capital letter and print it
-            print("{:c}".format(ord(str[i]) - 32), end='')
-
-        # if it is not print it as is
-        else:
-            print("{}".format(str[i]), end='')
+        check = ord(str[i]) >= 97 or ord(str[i]) <= 122
+        print("{:c}".format(ord(str[i] - 1) if check else str[i]), end='')
+    print()
