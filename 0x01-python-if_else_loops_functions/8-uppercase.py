@@ -9,6 +9,6 @@ def uppercase(str):
     '''
 # Loop through each character
     for i in range(len(str)):
-        check = ord(str[i]) >= 97 or ord(str[i]) <= 122
+        check = ord(str[i]) >= 97 and ord(str[i]) <= 122
         print("{:c}".format(ord(str[i]) - 32) if check else str[i], end='')
     print()
