@@ -9,6 +9,11 @@ def uppercase(str):
     '''
 # Loop through each character
     for i in range(len(str)):
+        # check if the character is a small letter ascii alphabet
         check = ord(str[i]) >= 97 and ord(str[i]) <= 122
+
+        # if small letter convert, if not, just print the character
         print("{:c}".format(ord(str[i]) - 32) if check else str[i], end='')
+
+    # Print the new line after words, since i have ceased the newlne with end
     print()
