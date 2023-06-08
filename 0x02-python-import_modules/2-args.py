@@ -12,11 +12,11 @@ if __name__ == '__main__':
     # check if there's just one argument
     elif len(sys.argv) == 2:
         print("{} argument:".format(1))
-        for i in range(1,len(sys.argv)):
+        for i in range(1, len(sys.argv)):
             print("{}: {}".format(i, sys.argv[i]))
 
     # check for more than one argument
     else:
         print("{} arguments:".format(len(sys.argv) - 1))
-        for i in range(1,len(sys.argv)):
+        for i in range(1, len(sys.argv)):
             print("{}: {}".format(i, sys.argv[i]))
