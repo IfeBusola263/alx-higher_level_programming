@@ -13,14 +13,18 @@ def delete_at(my_list=[], idx=0):
 
     '''
 
+    highest_index = len(my_list) - 1 
     # Check if it's not an empty list
     if my_list is not None:
+        if idx >= and idx <= highest_index:
 
-        # remove the item at the specified index
-        del my_list[idx]
+            # remove the item at the specified index
+            del my_list[idx]
 
-        # return the modified list
-        return my_list
+            # return the modified list
+            return my_list
+        else:
+            return my_list
 
     # return None if the list is empty
     else:
