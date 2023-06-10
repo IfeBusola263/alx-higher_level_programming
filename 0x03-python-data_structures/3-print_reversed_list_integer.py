@@ -13,11 +13,11 @@ def print_reversed_list_integer(my_list=[]):
 
     '''
     # confirm it is not an empty list
-    if my_list is not []:
+    # if my_list is not []:
 
-        # Reverse the list
-        my_list.reverse()
+    # Reverse the list
+    my_list.reverse()
 
-        # loop through the list to print each item
-        for item in my_list:
-            print("{:d}".format(item))
+    # loop through the list to display each item
+    for item in my_list:
+        print("{:d}".format(item))
