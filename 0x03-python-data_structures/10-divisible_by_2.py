@@ -16,21 +16,24 @@ def divisible_by_2(my_list=[]):
     new_list = []
 
     # loop through list using modulo
-    for item in my_list:
+    if my_list is not None:
+        for item in my_list:
 
-        # Handle negative item
-        if item < 0:
-            new_var = item * -1
-            if new_var % 2 == 0:
-                new_list.append(True)
+            # Handle negative item
+            if item < 0:
+                new_var = abs(item)
+                if new_var % 2 == 0:
+                    new_list.append(True)
+                else:
+                    new_list.append(False)
+
+                # For positive integars
             else:
-                new_list.append(False)
+                if item % 2 == 0:
+                    new_list.append(True)
+                else:
+                    new_list.append(False)
 
-        # For positive integars
-        else:
-            if item % 2 == 0:
-                new_list.append(True)
-            else:
-                new_list.append(False)
-
-    return new_list
+        return new_list
+    else:
+        return
