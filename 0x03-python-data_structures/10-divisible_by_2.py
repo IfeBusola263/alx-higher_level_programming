@@ -22,15 +22,15 @@ def divisible_by_2(my_list=[]):
         if item < 0:
             new_var = abs(item)
             if new_var % 2 == 0:
-                new_list.append(True)
+                new_list.append('True')
             else:
-                new_list.append(False)
+                new_list.append('False')
 
         # For positive integars
         else:
             if item % 2 == 0:
-                new_list.append(True)
+                new_list.append('True')
             else:
-                new_list.append(False)
+                new_list.append('False')
 
     return new_list
