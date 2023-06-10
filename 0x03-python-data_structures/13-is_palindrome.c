@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	listint_t *ptr;
 	int arr[30], i, len;
 
-	if (*head != NULL)
+	if (head != NULL)
 	{
 		ptr = *head;
 
@@ -31,5 +31,5 @@ int is_palindrome(listint_t **head)
 		}
 		return (1);
 	}
-	return (0);
+	return (1);
 }
