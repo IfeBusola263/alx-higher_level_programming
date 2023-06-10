@@ -20,17 +20,17 @@ def divisible_by_2(my_list=[]):
 
         # Handle negative item
         if item < 0:
-            new_var = abs(item)
+            new_var = item * -1
             if new_var % 2 == 0:
-                new_list.append('True')
+                new_list.append(True)
             else:
-                new_list.append('False')
+                new_list.append(False)
 
         # For positive integars
         else:
             if item % 2 == 0:
-                new_list.append('True')
+                new_list.append(True)
             else:
-                new_list.append('False')
+                new_list.append(False)
 
     return new_list
