@@ -12,14 +12,13 @@ def divisible_by_2(my_list=[]):
     ['False', 'True', 'False', 'True']
 
     '''
-    # Create an empty list to store new data
+    # Create an empty list to store new item
     new_list = []
 
     # loop through list using modulo
     for item in my_list:
 
-        # Check if item is negative, as modulo operator
-        # does not handle negative operation gracefully
+        # Handle negative item
         if item < 0:
             new_var = abs(item)
             if new_var % 2 == 0:
