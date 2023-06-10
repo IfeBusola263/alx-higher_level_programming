@@ -19,7 +19,7 @@ def print_matrix_integer(matrix=[[]]):
     for item in matrix:
         for items in item:
             if items == item[-1]:
-                print("{}".format(items), end='')
+                print("{:d}".format(items), end='')
             else:
-                print("{}".format(items), end=' ')
+                print("{:d}".format(items), end=' ')
         print()
