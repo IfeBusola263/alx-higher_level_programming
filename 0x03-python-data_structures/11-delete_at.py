@@ -13,7 +13,7 @@ def delete_at(my_list=[], idx=0):
 
     '''
 
-    highest_index = len(my_list) - 1 
+    highest_index = len(my_list) - 1
     # Check if it's not an empty list
     if my_list is not None:
         if idx >= and idx <= highest_index:
