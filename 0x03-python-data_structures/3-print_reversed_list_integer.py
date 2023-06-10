@@ -21,5 +21,3 @@ def print_reversed_list_integer(my_list=[]):
         # loop through the list to display each item
         for item in my_list:
             print("{:d}".format(item))
-    else:
-        print('None')
