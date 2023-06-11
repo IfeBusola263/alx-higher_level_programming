@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	listint_t *ptr;
 	int arr[1024], i, len;
 
-	if (head != NULL && *head->next != NULL)
+	if (head != NULL && (*head)->next != NULL)
 	{
 		ptr = *head;
 
