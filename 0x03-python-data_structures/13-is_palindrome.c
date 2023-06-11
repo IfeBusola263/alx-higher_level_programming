@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 		}
 		ptr_c->next = ptr_p;
 		ptrMid = ptrMid->next;
-		while(ptrMid->next)
+		while (ptrMid->next)
 		{
 			if (ptrTop->n != ptrMid->n)
 				return (0);
