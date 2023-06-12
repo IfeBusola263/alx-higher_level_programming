@@ -3,35 +3,41 @@
 /**
  * is_palindrome - checks if a linked list is a palindrome
  * @head: a pointer to the head pointer
- *
  * Return: returns 1 at success, 0 otherwise
  */
 int is_palindrome(listint_t **head)
 {
 	listint_t *ptrTop, *ptrMid;
-	int arr[100], i, len;
+	listint_t *ptr_p, *ptr_n, *ptr_c;
 
 	if (head != NULL)
 	{
 		ptrTop = *head;
 		ptrMid = *head;
 
-		i = 0;
 		while (ptrTop && ptrTop->next)
 		{
-			arr[i] = ptrMid->n;
 			ptrTop = ptrTop->next->next;
 			ptrMid = ptrMid->next;
-			i++;
 		}
-		len = i;
-		ptrTop = *head;
 
-		for (i = 0; i < len ; i++)
+		ptrTop = *head;
+		ptr_p = NULL;
+		ptr_n = ptrMid->next->next;
+		ptr_c = ptrMid->next;
+		while (ptr_n)
 		{
-			if (arr[i] != ptrTop->n)
+			ptr_c->next = ptr_p;
+			ptr_p = ptr_c;
+			ptr_c = ptr_n;
+			ptr_n = ptr_c->next;
+		}
+		ptr_c->next = ptr_p;
+		ptrMid = ptrMid->next;
+		while (ptrMid->next)
+		{
+			if (ptrTop->n != ptrMid->n)
 				return (0);
-			ptrTop = ptrTop->next;
 		}
 		return (1);
 	}
