@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
 		ptrTop = *head;
 		ptrMid = *head;
 
-		while (ptrTop && ptrTop->next)
+		while (ptrTop && ptrTop->next) /* get to the middle */
 		{
 			ptrTop = ptrTop->next->next;
 			ptrMid = ptrMid->next;
@@ -25,7 +25,7 @@ int is_palindrome(listint_t **head)
 		ptr_p = NULL;
 		ptr_n = ptrMid->next->next;
 		ptr_c = ptrMid->next;
-		while (ptr_n)
+		while (ptr_n) /* reverse the list from the middle downwards */
 		{
 			ptr_c->next = ptr_p;
 			ptr_p = ptr_c;
@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 		ptrMid->next = ptr_c;
 		ptr_c->next = ptr_p;
 		ptrMid = ptrMid->next;
-		while (ptrMid->next)
+		while (ptrMid) /* compare the items for similarity or diff */
 		{
 			if (ptrTop->n != ptrMid->n)
 				return (0);
