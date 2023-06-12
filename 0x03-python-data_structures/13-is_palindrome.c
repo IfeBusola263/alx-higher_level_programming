@@ -23,8 +23,8 @@ int is_palindrome(listint_t **head)
 
 		ptrTop = *head;
 		ptr_p = NULL;
-		ptr_n = ptrMid->next;
-		ptr_c = ptrMid;
+		ptr_n = ptrMid->next->next;
+		ptr_c = ptrMid->next;
 		while (ptr_n)
 		{
 			ptr_c->next = ptr_p;
