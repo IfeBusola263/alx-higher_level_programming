@@ -10,7 +10,7 @@ int is_palindrome(listint_t **head)
 	listint_t *ptrTop, *ptrMid;
 	listint_t *ptr_p, *ptr_n, *ptr_c;
 
-	if (head != NULL)
+	if (head != NULL && (*head)->next != NULL)
 	{
 		ptrTop = *head;
 		ptrMid = *head;
