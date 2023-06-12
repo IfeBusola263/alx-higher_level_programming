@@ -38,6 +38,8 @@ int is_palindrome(listint_t **head)
 		{
 			if (ptrTop->n != ptrMid->n)
 				return (0);
+			ptrMid = ptrMid->next;
+			ptrTop = ptrTop->next;
 		}
 		return (1);
 	}
