@@ -12,11 +12,8 @@ def best_score(a_dictionary):
     '''
 
     # if the dictionary is an empty dictionary
-    if a_dictionary is None:
-        return None
-
     # otherwise find the maximum value
-    else:
+    if a_dictionary is not None:
         val_list = a_dictionary.values()
         max_val = max(val_list)
 
@@ -24,3 +21,5 @@ def best_score(a_dictionary):
         for key, value in a_dictionary.items():
             if value == max_val:
                 return key
+    else:
+        return None
