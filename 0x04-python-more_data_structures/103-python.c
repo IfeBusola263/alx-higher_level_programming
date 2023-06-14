@@ -22,7 +22,7 @@ void print_python_bytes(PyObject *p)
 {
 	PyBytesObject *by;
 
-	by = (PyBytesObject)p
+	by = (PyBytesObject)p;
 
 	printf("[.] bytes object info\n");
 	printf("  size: %d\n", p->ob_base->ob_size);
