@@ -7,6 +7,6 @@ def multiply_list_map(my_list=[], number=0):
     [4, 8, 12, 16, 24]
 
     '''
-    new_list = list(map(lambda x : x * number, my_list))
+    new_list = list(map(lambda x: x * number, my_list))
 
     return new_list
