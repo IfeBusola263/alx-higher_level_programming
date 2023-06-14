@@ -28,14 +28,13 @@ void print_python_list(PyObject *p)
  *
  * Return: nothing
  */
-void print_python_bytes(PyObject *p)
-{
-	PyBytesObject *by;
+/* void print_python_bytes(PyObject *p) */
+/* { */
+/* 	PyBytesObject *by; */
 
-	by = (PyBytesObject)p;
+/* 	by = (PyBytesObject)p; */
 
-	printf("[.] bytes object info\n");
-	printf("  size: %lu\n", by->ob_base->ob_size);
-	/* printf("  trying string: %s\n", ); */
-	/* printf("  first %d bytes: \n", ); */
-}
+/* 	printf("[.] bytes object info\n"); */
+/* 	printf("  size: %lu\n", by->ob_base->ob_size); */
+/* 	printf("  trying string: %s\n", ); */
+/* 	printf("  first %d bytes: \n", ); */
