@@ -26,6 +26,6 @@ void print_python_bytes(PyObject *p)
 
 	printf("[.] bytes object info\n");
 	printf("  size: %d\n", p->ob_base->ob_size);
-	printf("  trying string: %s\n", );
-	printf("  first %d bytes: \n", );
+	/* printf("  trying string: %s\n", ); */
+	/* printf("  first %d bytes: \n", ); */
 }
