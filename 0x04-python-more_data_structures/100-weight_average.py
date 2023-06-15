@@ -10,6 +10,6 @@ def weight_average(my_list=[]):
             a, b= item
             tup_add += (a * b)
             weight_add += b
-        return tup_add / weight_add
+        return float(tup_add / weight_add)
     else:
         return 0
