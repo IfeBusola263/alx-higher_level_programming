@@ -5,9 +5,9 @@ def weight_average(my_list=[]):
     tup_add = 0
     weight_add = 0
 
-    if my_list is not None:
+    if len(my_list) > 0:
         for item in my_list:
-            a, b, *_ = item + (0, 0)
+            a, b= item
             tup_add += (a * b)
             weight_add += b
         return tup_add / weight_add
