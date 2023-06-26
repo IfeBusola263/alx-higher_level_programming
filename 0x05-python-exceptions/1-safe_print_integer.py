@@ -12,7 +12,6 @@ def safe_print_integer(value):
 
     '''
     try:
-        if isinstance(value, int) and int(value):
             print("{:d}".format(int(value)))
             return True
 
