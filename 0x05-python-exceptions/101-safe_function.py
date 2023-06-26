@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def safe_function(fct, *args):
     ''' Executes the  function fct safely with the arguments
     args
