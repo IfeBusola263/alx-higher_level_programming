@@ -14,4 +14,4 @@ def safe_print_division(a, b):
     except Exception:
         res = None
     finally:
-        print("Inside result:", res)
+        print("Inside result: {}".format(res))
