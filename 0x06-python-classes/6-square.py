@@ -55,7 +55,7 @@ class Square:
                 if self.__position[1] >= 0:
 
                     # fill with spaces here
-                    print("_" * self.__position[0], end='')
+                    print(" " * self.__position[0], end='')
                 for j in range(self.__size):
                     print('#', end='')
                 print()
