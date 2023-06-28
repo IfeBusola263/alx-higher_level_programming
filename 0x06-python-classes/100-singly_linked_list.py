@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''This module imitates the singly linked lists in C language'''
 
+
 class Node:
     '''Class node is makes instantiation of linked lists.'''
 
