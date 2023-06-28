@@ -51,11 +51,13 @@ class Square:
             print()
         else:
             # print the square and fill with spaces
+            if self.__position[1] > 0:
+                for i in range(self.__position[1]):
+                    print()
             for i in range(self.__size):
-                if self.__position[1] >= 0:
+                # fill with spaces here
+                print(" " * self.__position[0], end='')
 
-                    # fill with spaces here
-                    print(" " * self.__position[0], end='')
                 for j in range(self.__size):
                     print('#', end='')
                 print()
