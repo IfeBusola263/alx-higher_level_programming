@@ -68,7 +68,7 @@ class Square:
                     print('#', end='')
                 print()
         print(" " * self.__position[0], end='')
-        return '#' * Self.__size
+        return '#' * self.__size
 
     def __str__(self):
         '''Prints a nicely outputed object of type string of the
