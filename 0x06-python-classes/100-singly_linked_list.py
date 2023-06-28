@@ -54,9 +54,12 @@ class SinglyLinkedList:
 
     def __str__(self):
         '''Prints a string representation of the object passed to it.'''
-        for i in range(len(self.__head) - 1):
-            print(self.__head[i])
-        return str(self.__head[-1])
+        if len(self.__head) > 1:
+            for i in range(len(self.__head) - 1):
+                print(self.__head[i])
+            return str(self.__head[-1])
+        else:
+            return ''
 
     def sorted_insert(self, value):
         '''Creates the list with the elements sorted in increasing order'''
