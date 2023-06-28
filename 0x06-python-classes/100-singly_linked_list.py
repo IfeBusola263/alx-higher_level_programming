@@ -59,7 +59,7 @@ class SinglyLinkedList:
                 print(self.__head[i])
             return str(self.__head[-1])
         else:
-            return ''
+            return
 
     def sorted_insert(self, value):
         '''Creates the list with the elements sorted in increasing order'''
