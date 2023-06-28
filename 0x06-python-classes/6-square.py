@@ -34,6 +34,9 @@ class Square:
     @position.setter
     def position(self, value):
         ''' Sets the value if any wrong input(tuple) is given by user '''
+        if type(value) is not tuple or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        
         first, second = value
 
         if first < 0 or second < 0:
