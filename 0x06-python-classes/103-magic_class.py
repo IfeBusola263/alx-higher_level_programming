@@ -4,7 +4,7 @@
 import math
 
 
-class _MagicClass:
+class MagicClass:
     ''' This class defines the attribute radius and methods for
     area anf circumference of a circle'''
 
@@ -22,5 +22,5 @@ class _MagicClass:
         return self.__radius ** 2 * math.pi
 
     def circumference(self):
-        ''' Returns the circumference of a circle(Magic calculation'''
+        ''' Returns the circumference of a circle(Magic calculation)'''
         return 2 * math.pi * self.__radius
