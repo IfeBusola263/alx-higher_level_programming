@@ -73,7 +73,7 @@ class Rectangle:
         else:
             # prints each building block of the rectangle
             return '\n'.join(''.join(
-                Rectangle.print_symbol for i in range(self.__width))
+                str(self.print_symbol) for i in range(self.__width))
                              for j in range(self.__height))
 
     def __repr__(self):
