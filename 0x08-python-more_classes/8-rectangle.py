@@ -130,4 +130,7 @@ class Rectangle:
         if rect_1 == rect_2:
             return rect_1
         else:
-            return max(rect_1, rect_2)
+            if rect_1 < rect_2:
+                return rect_2
+            else:
+                return rect_1
