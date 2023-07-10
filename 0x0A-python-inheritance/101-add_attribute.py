@@ -9,7 +9,7 @@ def add_attribute(*args):
     # use sequence unpacking to store the class name
     # attribute name and the attribute value
 
-    obj, attr, value  = args
+    obj, attr, value, *_ = args
 
     if not isinstance(obj, str) and not hasattr(obj, attr):
         return setattr(obj, attr, value)
