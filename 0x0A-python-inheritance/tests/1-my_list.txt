@@ -1,0 +1,17 @@
+The ``my_list`` module
+==================================================
+This is the test file for the inherited class list
+__________________________________________________
+
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(3)
+	>>> print(my_list)
+	[1, 4, 3]
+	>>> my_list.print_sorted()
+	[1, 3, 4]
+	>>> my_list.pop()
+	3
