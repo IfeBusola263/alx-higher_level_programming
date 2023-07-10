@@ -52,10 +52,9 @@ class Square(Rectangle):
         ''' The init method initialized the fields and other starting
         instructions when the instance of the class is created '''
 
-        Rectangle.__init__(self, size, size)
-
         self.integer_validator("size", size)
         self.__size = size
+        Rectangle.__init__(self, size, size)
 
     def area(self):
         ''' Returns the area of the square object '''
