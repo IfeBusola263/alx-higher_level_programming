@@ -5,10 +5,6 @@
 class BaseGeometry:
     ''' This is an empty class '''
 
-    def __init__(self):
-        ''' initiatized when an instance of the class is created '''
-        pass
-
     def area(self):
         ''' raises an exception when called '''
         raise Exception("area() is not implemented")
@@ -24,14 +20,15 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    ''' A class that inherirs from BaseGeometry '''
+    ''' A class that inherits from BaseGeometry '''
 
     def __init__(self, width, height):
         ''' the init magic method is initiated when an
         instance of the class is created'''
 
-        BaseGeometry.integer_validator(self, "width", width)
-        BaseGeometry.integer_validator(self, "height", height)
+
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
 
         self.__width = width
         self.__height = height
