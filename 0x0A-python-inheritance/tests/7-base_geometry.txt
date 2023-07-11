@@ -22,7 +22,7 @@ _____________________________________
 	...
 	TypeError: name must be an integer
 
-	>>> bg.integer_validator("james")
+	>>> bg.integer_validator("age", -1)
 	Traceback (most recent call last):
         ...
-        TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+	ValueError: age must be greater than 0
