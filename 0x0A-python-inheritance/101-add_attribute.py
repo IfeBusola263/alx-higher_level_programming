@@ -11,7 +11,10 @@ def add_attribute(*args):
 
     obj, attr, value, *_ = args
 
-    if not isinstance(obj, str) or not hasattr(obj, attr):
-        return setattr(obj, attr, value)
-    else:
-        raise TypeError("can't add new attribute")
+    excluded_classes = (str, int, float, list, tuple, dict)
+
+    for cls in excluded_classes:
+        if not isinstance(obj, cls) and not hasattr(obj, attr):
+            return setattr(obj, attr, value)
+        else:
+            raise TypeError("can't add new attribute")
