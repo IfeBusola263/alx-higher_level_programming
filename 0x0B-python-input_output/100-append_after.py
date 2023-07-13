@@ -8,15 +8,20 @@ def append_after(filename="", search_string="", new_string=""):
     search string is found in any line in file 'filename' '''
 
     # open the file
-    with open(filename, 'a+', encoding='utf-8') as mine:
+    with open(filename, 'r', encoding='utf-8') as file:
 
         # loop through each line in the file
-        for line in mine:
+        lines = file.readlines()
 
-            line = mine.read()
+    # re-open the file for comparison
+    with open(filename, 'w', encoding='utf-8') as file:
 
-            # loop through each word in the line and compare with search_string
-            if line.find(search_string) >= 0:
+        # loop through the list of lines from readlines
+        for line in lines:
 
-                # if it is found append the new string
-                mine.write(new_string)
+            file.write(line)
+            # check if the string is in the line
+            if search_string in line:
+
+                 # if it is found append the new string
+                file.write(new_string)
