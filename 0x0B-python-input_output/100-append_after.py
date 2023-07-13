@@ -23,5 +23,5 @@ def append_after(filename="", search_string="", new_string=""):
             # check if the string is in the line
             if search_string in line:
 
-                 # if it is found append the new string
+                # if it is found append the new string
                 file.write(new_string)
