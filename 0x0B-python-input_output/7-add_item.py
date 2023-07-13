@@ -15,13 +15,13 @@ new_items = sys.argv[1:]
 if os.path.exists("./add_item.json"):
 
     # load the data from the json file
-    string = load_from_json_file("add_item.json")
+    data = load_from_json_file("add_item.json")
 
     # extend the list by the new contnet from the comand line
-    string.extend(new_items)
+    new_data = data + new_items
 
     # save it into the JSON file
-    save_to_json_file(string, "add_item.json")
+    save_to_json_file(new_data, "add_item.json")
 
 # if the file does exist, create it and load the data from the command line
 else:
