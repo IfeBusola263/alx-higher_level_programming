@@ -13,7 +13,7 @@ class Square(Rectangle):
         ''' The init method executes when the instance of this
         class(Square) is created and also initializes the fields '''
 
-        self.size = size
+        # self.size = size
 
         super().__init__(size, size, x, y, id)
 
@@ -21,7 +21,7 @@ class Square(Rectangle):
     def size(self):
         ''' The attribute getter for the size attribute '''
 
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -33,7 +33,7 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("width must be > 0")
 
-        self.__size = value
+        # self.__size = value
         self.width = value
         self.height = value
 
