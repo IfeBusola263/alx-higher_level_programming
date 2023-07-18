@@ -190,6 +190,12 @@ class TestSquare(unittest.TestCase):
         self.s.update(89)
         self.assertEqual(self.s.id, 89)
 
+        self.s.update()
+        self.assertEqual(self.s.id, 89)
+        self.assertEqual(self.s.size, 10)
+        self.assertEqual(self.s.x, 10)
+        self.assertEqual(self.s.y, 10)
+
         self.s.update(89, 2, size=9, id=8)
         self.assertEqual(self.s.id, 89)
         self.assertEqual(self.s.width, 2)

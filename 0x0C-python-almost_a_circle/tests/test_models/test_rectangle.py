@@ -202,9 +202,15 @@ class TestRectangle(unittest.TestCase):
 
         self.r = Rectangle(10, 10, 10, 10)
 
-
         self.r.update(89)
         self.assertEqual(self.r.id, 89)
+
+        self.r.update()
+        self.assertEqual(self.r.id, 89)
+        self.assertEqual(self.r.width, 10)
+        self.assertEqual(self.r.height, 10)
+        self.assertEqual(self.r.x, 10)
+        self.assertEqual(self.r.y, 10)
 
         self.r.update(89, 2, width=9, height=8)
         self.assertEqual(self.r.id, 89)
