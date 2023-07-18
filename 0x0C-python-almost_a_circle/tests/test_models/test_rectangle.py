@@ -24,7 +24,7 @@ class TestRectangle(unittest.TestCase):
         self.r7 = Rectangle(10, 5, 2, 12)
 
     def tearDown(self):
-        ''' exectes after every test '''
+        ''' executes after every test '''
         del self.r1
         del self.r2
         del self.r3
