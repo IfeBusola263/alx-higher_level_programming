@@ -38,8 +38,9 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        ''' The str magic method returns a string representation of the use case
-        of the attributes of the square class '''
+        ''' The str magic method returns a string representation
+        of the use case of the attributes of the square class '''
+
         return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
 
     def update(self, *args, **kwargs):
