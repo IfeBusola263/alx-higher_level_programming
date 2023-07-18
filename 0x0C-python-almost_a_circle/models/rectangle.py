@@ -155,7 +155,6 @@ class Rectangle(Base):
             #         if key2 in key:
             #             self.__dict__[key] = value2
 
-
     def to_dictionary(self):
         ''' Returns the dictionary of the class instance '''
 
