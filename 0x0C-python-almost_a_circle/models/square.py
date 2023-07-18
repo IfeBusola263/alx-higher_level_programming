@@ -62,19 +62,37 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
 
-                if key == 'size':
+                if 'size' in key:
                     self.width = value
                     self.height = value
-                if key == 'x':
+                if 'x' in key:
                     self.x = value
 
                 if key == 'id':
                     self.id = value
 
-                if key == 'y':
+                if 'y' in key:
                     self.y = value
 
     def to_dictionary(self):
         ''' Returns the dictionary of the class instance '''
 
-        return self.__dict__
+        new_dict = {}
+        # Python uses name mangling to ensure there are naming conflicts
+        # for the attributes of base classes and their subclasses
+        # So create a new key value pair to take out the mangling
+        # The mangling looks like '_Rectangle__width', but since it's just
+        # width we want to be mapped not the mangled string
+
+        attr = ['width', 'x', 'y', 'id']
+
+        for key, value in self.__dict__.items():
+            for item in attr:
+                if item in key:
+                    new_dict[item] = value
+
+        value = new_dict.get('width')
+        del new_dict['width']
+        new_dict['size'] = value
+
+        return new_dict

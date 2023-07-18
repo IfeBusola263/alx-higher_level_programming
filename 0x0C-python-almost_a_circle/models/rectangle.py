@@ -136,19 +136,19 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
 
-                if key == 'height':
+                if 'height' in key:
                     self.height = value
 
-                if key == 'width':
+                if 'width' in key:
                     self.width = value
 
-                if key == 'x':
+                if 'x' in key:
                     self.x = value
 
                 if key == 'id':
                     self.id = value
 
-                if key == 'y':
+                if 'y' in key:
                     self.y = value
             # for key, value in self.__dict__.items():
             #     for key2, value2 in kwargs.items():
@@ -158,4 +158,21 @@ class Rectangle(Base):
     def to_dictionary(self):
         ''' Returns the dictionary of the class instance '''
 
-        return self.__dict__
+        new_dict = {}
+
+        # Python uses name mangling to ensure there are naming conflicts
+        # for the attributes of base classes and their subclasses
+        # So create a new key value pair to take out the mangling
+        # The mangling looks like '_Rectangle__width', but since it's just
+        # width we want to be mapped not the mangled string
+
+        attrs = ['width', 'height', 'id', 'x', 'y']
+
+        for key, value in self.__dict__.items():
+            for attr in attrs:
+                if attr in key:
+
+                    # populate the empty dictionary
+                    new_dict[attr] = value
+
+        return new_dict
