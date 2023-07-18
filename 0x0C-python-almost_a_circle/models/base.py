@@ -12,7 +12,7 @@ class Base:
         class is created '''
 
         if isinstance(id, int) and id < 0:
-            raise ValueError("id cannot be negative")
+            raise ValueError
 
         if id is not None:
             self.id = id

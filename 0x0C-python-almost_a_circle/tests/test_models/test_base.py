@@ -16,6 +16,7 @@ class TestBase(unittest.TestCase):
         self.obj1 = Base()
         self.obj2 = Base(10)
         self.obj4 = Base()
+        self.obj5 = Base(6000)
 
 
     def test_base(self):
@@ -25,6 +26,10 @@ class TestBase(unittest.TestCase):
         self.assertEqual(self.obj1.id, 2)
         self.assertEqual(self.obj2.id, 10)
         self.assertEqual(self.obj4.id, 3)
+        self.assertEqual(self.obj5.id, 6000)
 
         with  self.assertRaises(ValueError):
             self.obj3 = Base(-1)
+
+        with  self.assertRaises(ValueError):
+            self.obj3 = Base(-12000)
