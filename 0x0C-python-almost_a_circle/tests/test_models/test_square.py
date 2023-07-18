@@ -180,3 +180,99 @@ class TestSquare(unittest.TestCase):
         sys.stdout = sys.__stdout__
 
         self.assertEqual(output_displayed, expected)
+
+    def test_update(self):
+        ''' Test for the update method of the class '''
+
+        self.s = Square(10, 10, 10, 10)
+
+
+        self.s.update(89)
+        self.assertEqual(self.s.id, 89)
+
+        self.s.update(89, 2, size=9, id=8)
+        self.assertEqual(self.s.id, 89)
+        self.assertEqual(self.s.width, 2)
+
+        self.s.update(89, 2, 3)
+        self.assertEqual(self.s.id, 89)
+        self.assertEqual(self.s.size, 2)
+        self.assertEqual(self.s.x, 3)
+
+        self.s.update(89, 2, 3, 4)
+        self.assertEqual(self.s.id, 89)
+        self.assertEqual(self.s.size, 2)
+        self.assertEqual(self.s.x, 3)
+        self.assertEqual(self.s.y, 4)
+
+        self.s.update(x=1, size=2, y=3)
+        self.assertEqual(self.s.id, 89)
+        self.assertEqual(self.s.width, 2)
+        self.assertEqual(self.s.size, 2)
+        self.assertEqual(self.s.x, 1)
+        self.assertEqual(self.s.y, 3)
+
+        with self.assertRaises(ValueError):
+             self.s.update(10, 5, -10, 10)
+
+        with self.assertRaises(ValueError):
+             self.s.update(10, 5, 10, -10)
+
+        with self.assertRaises(ValueError):
+             self.s.update(10, -5, 10, 10)
+
+        with self.assertRaises(ValueError):
+             self.s.update(0, 0, 0, 10)
+
+        with self.assertRaises(TypeError):
+             self.s.update(6, [5], 3, 10)
+
+        with self.assertRaises(TypeError):
+             self.s.update(7, 15, (10,4), 10)
+
+        with self.assertRaises(TypeError):
+             self.s.update(89, "Hi", 6, 10)
+
+        with self.assertRaises(TypeError):
+             self.s.update(10, 12.6, 5, 10)
+
+        self.s6.update(size=5)
+        self.assertEqual(self.s6.width, 5)
+
+        self.s6.update(size=5, x=15)
+        self.assertEqual(self.s6.size, 5)
+        self.assertEqual(self.s6.width, 5)
+        self.assertEqual(self.s6.x, 15)
+
+        self.s6.update(x=8, size=5, y=15)
+        self.assertEqual(self.s6.width, 5)
+        self.assertEqual(self.s6.y, 15)
+        self.assertEqual(self.s6.x, 8)
+
+        self.s6.update(x=8, size=5, id=21,  y=4)
+        self.assertEqual(self.s6.width, 5)
+        self.assertEqual(self.s6.x, 8)
+        self.assertEqual(self.s6.id, 21)
+        self.assertEqual(self.s6.y, 4)
+
+        arg = (3, 2, 6, 45)
+        arg2 = {'size': 10, 'id': 56, 'height': 5, 'x': 24, 'y': 27}
+
+        self.s1.update(*arg, **arg2)
+        self.assertEqual(self.s1.width, 2)
+        self.assertEqual(self.s1.x, 6)
+        self.assertEqual(self.s1.id, 3)
+        self.assertEqual(self.s1.y, 45)
+
+
+
+        def test_to_dictionary(self):
+            ''' Test for the method 'to_dictionary' to
+            confirm the expected behaviour '''
+            expected = {'size': 3, 'id': 10, 'x': 1, 'y': 2}
+            dic_rep = s4.to_dictionary()
+            self.assertEqual(dic_rep, expected)
+
+            expected2 = {'size': 4, 'x': 2, 'y': 0, 'id': 2}
+            dic_rep = s2.to_dictionary()
+            self.assertEqual(dic_rep, expected2)

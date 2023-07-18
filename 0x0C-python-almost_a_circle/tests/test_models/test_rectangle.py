@@ -202,6 +202,7 @@ class TestRectangle(unittest.TestCase):
 
         self.r = Rectangle(10, 10, 10, 10)
 
+
         self.r.update(89)
         self.assertEqual(self.r.id, 89)
 
@@ -257,3 +258,45 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError):
              self.r.update(10, 12.6, 6, 5, 10)
+
+        self.r6.update(width=5)
+        self.assertEqual(self.r6.width, 5)
+
+        self.r6.update(width=5, height=15)
+        self.assertEqual(self.r6.width, 5)
+        self.assertEqual(self.r6.height, 15)
+
+        self.r6.update(x=8, width=5, height=15)
+        self.assertEqual(self.r6.width, 5)
+        self.assertEqual(self.r6.height, 15)
+        self.assertEqual(self.r6.x, 8)
+
+        self.r6.update(x=8, width=5, id=21, height=15, y=4)
+        self.assertEqual(self.r6.width, 5)
+        self.assertEqual(self.r6.height, 15)
+        self.assertEqual(self.r6.x, 8)
+        self.assertEqual(self.r6.id, 21)
+        self.assertEqual(self.r6.y, 4)
+
+        arg = (3, 2, 6, 5, 45)
+        arg2 = {'width': 10, 'id': 56, 'height': 5, 'x': 24, 'y': 27}
+
+        self.r1.update(*arg, **arg2)
+        self.assertEqual(self.r1.width, 2)
+        self.assertEqual(self.r1.height, 6)
+        self.assertEqual(self.r1.x, 5)
+        self.assertEqual(self.r1.id, 3)
+        self.assertEqual(self.r1.y, 45)
+
+
+
+        def test_to_dictionary(self):
+            ''' Test for the method 'to_dictionary' to
+            confirm the expected behaviour '''
+            expected = {'width': 10, 'id': 56, 'height': 5, 'x': 24, 'y': 27}
+            dic_rep = r4.to_dictionary()
+            self.assertEqual(dic_rep, expected)
+
+            expected2 = {'width': 2, 'x': 0, 'y': 0, 'height': 10, 'id': 2}
+            dic_rep = r2.to_dictionary()
+            self.assertEqual(dic_rep, expected2)
