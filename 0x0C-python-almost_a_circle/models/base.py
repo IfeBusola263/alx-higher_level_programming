@@ -41,7 +41,8 @@ class Base:
         ''' The saves the json representation of a python object
         in a file '''
 
-        # open file for writing, first check if the file exists
+        # get the name of the class calling the method
+        # create file name
         filename = cls.__name__ + ".json"
         # insts = ["Rectangle", "Square"]
 
@@ -74,3 +75,13 @@ class Base:
         else:
             with open(filename, "w", encoding="utf-8") as file:
                 file.write('[]')
+
+    @staticmethod
+    def from_json_string(json_string):
+        ''' Returns the list of a json string, after converting
+        the json string '''
+
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
