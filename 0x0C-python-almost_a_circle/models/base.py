@@ -42,36 +42,35 @@ class Base:
         in a file '''
 
         # open file for writing, first check if the file exists
+        filename = cls.__name__ + ".json"
+        # insts = ["Rectangle", "Square"]
 
-        insts = ["Rectangle", "Square"]
-
-        if list_objs is not None:
+        if list_objs is not None and len(list_objs) > 0:
 
             # get dictionary representation of model
             js_dict = []
             for cls in list_objs:
                 js_dict.append(cls.to_dictionary())
 
-            for inst in insts:
+                # for inst in insts:
 
                 # check the class to work with
-                if inst in str(type(list_objs[0])):
+                # if inst in str(type(list_objs[0])):
 
-                    j_file = "./" + inst + ".json"
-                    oj_file = inst + ".json"
-                    # check if the file exists
-                    if os.path.exists(j_file):
+                # j_file = "./" + inst + ".json"
+                # oj_file = inst + ".json"
+                # check if the file exists
 
-                        # open the file for writing
-                        with open(oj_file, "w", encoding="utf-8") as file:
+            if os.path.exists("./" + filename):
+                # open the file for writing
+                with open(filename, "w", encoding="utf-8") as file:
+                    file.write(Base.to_json_string(js_dict))
 
-                            file.write(Base.to_json_string(js_dict))
-
-                    # If the file does not exist
-                    else:
-                        with open(oj_file, "w", encoding="utf-8") as file:
-                            file.write(Base.to_json_string(js_dict))
+            # If the file does not exist
+            else:
+                with open(filename, "w", encoding="utf-8") as file:
+                    file.write(Base.to_json_string(js_dict))
 
         else:
-            with open("None.json", "w", encoding="utf-8") as file:
+            with open(filename, "w", encoding="utf-8") as file:
                 file.write('[]')
