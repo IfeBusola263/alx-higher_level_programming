@@ -85,3 +85,13 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        ''' Returns an instance of the class calling the method '''
+
+        obj = cls(2, 3, 5, 6)
+
+        obj.update(**dictionary)
+
+        return obj
