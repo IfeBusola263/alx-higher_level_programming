@@ -90,7 +90,10 @@ class Base:
     def create(cls, **dictionary):
         ''' Returns an instance of the class calling the method '''
 
-        obj = cls(2, 3, 5, 6)
+        if cls.__name__ == "Rectangle":
+            obj = cls(2, 3)
+        else:
+            obj = cls(2)
 
         obj.update(**dictionary)
 
