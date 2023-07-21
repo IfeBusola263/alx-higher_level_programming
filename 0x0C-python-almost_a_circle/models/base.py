@@ -3,6 +3,7 @@
 
 import json
 import os
+import csv
 
 
 class Base:
@@ -126,3 +127,58 @@ class Base:
                 return list_of_instance
             else:
                 return list_of_instance
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        ''' saves the content of list_objects into a CSV file'''
+        new_list = []
+
+        # get file name
+        if cls.__name__ in ("Rectangle", "Square"):
+            filename = cls.__name__ + ".csv"
+
+            # check if list_object is not empty and not None
+            if list_objs is not None and len(list_objs) > 0:
+
+                for item in list_objs:
+                    new_list.append(item.to_dictionary())
+
+                rect_attr = ["id", "width", "height", "x", "y"]
+                sqr_attr = ["id", "size", "x", "y"]
+
+                # open file for writing
+                with open(filename, 'w', encoding="utf-8") as file:
+                    if cls.__name__ == "Rectangle":
+
+                        csv_rep = csv.DictWriter(file, fieldnames=rect_attr)
+                        csv_rep.writeheader()
+                        csv_rep.writerows(new_list)
+                    else:
+                        csv_rep = csv.DictWriter(file, fieldnames=sqr_attr)
+                        csv_rep.writeheader()
+                        csv_rep.writerows(new_list)
+            else:
+                with open("filename", 'w', encoding="utf-8") as file:
+                    csv_rep = csv.writer(file)
+                    csv_rep.writerow(new_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        ''' returns a list of instances created from a CSV file '''
+
+        list_of_instance = []
+
+        filename = cls.__name__ + ".csv"
+        if "Rectangle" in filename or "Square" in filename:
+
+            if os.path.exists("./" + filename):
+                with open(filename, "r", encoding="utf-8") as file:
+                    csv_rep = csv.DictReader(file)
+
+                    for model in csv_rep:
+                        for key, value in model.items():
+                            model[key] = int(value)
+                        list_of_instance.append(cls.create(**model))
+
+                    return list_of_instance
+            return list_of_instance
