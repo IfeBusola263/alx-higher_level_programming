@@ -98,3 +98,31 @@ class Base:
         obj.update(**dictionary)
 
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        ''' Returns a list of instances created from a json file '''
+
+        # open the json file to access dictionary of attributes for an instance
+        # first check if the file exists
+
+        list_of_instance = []
+        filename = cls.__name__ + ".json"
+
+        if "Rectangle" in filename or "Square" in filename:
+
+            if os.path.exists("./" + filename):
+                with open(filename, "r", encoding="utf-8") as file:
+                    content_in_json = file.read().strip()
+                    content = cls.from_json_string(content_in_json)
+
+                # loop through the list creating instances
+                for attr in content:
+
+                    # append the instances into a new list
+                    list_of_instance.append(cls.create(**attr))
+
+                # return the list of instances
+                return list_of_instance
+            else:
+                return list_of_instance
