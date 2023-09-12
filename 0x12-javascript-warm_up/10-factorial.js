@@ -6,7 +6,7 @@ if (len < 3) {
 }
 
 function factorial (a) {
-  if (a === 0) {
+  if (a === 0 || isNaN(a)) {
     return 1;
   }
   return (a * factorial(a - 1));
