@@ -18,7 +18,7 @@ if __name__ == '__main__':
     3306/{}".format(username, pwd, dBase))
 
     session = Session(sessionmaker(bind=engine))
-    states = session.query(State).all()
+    states = session.query(State).order_by(State.id).all()
 
     for state in states:
         print(f'{state.id}: {state.name}')
