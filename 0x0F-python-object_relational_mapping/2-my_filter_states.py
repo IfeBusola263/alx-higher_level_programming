@@ -17,7 +17,7 @@ if __name__ == '__main__':
                                user=username, passwd=pwd, db=dBase)
     cur = dataBase.cursor()
     cur.execute('SELECT id,\
- name FROM states WHERE name="{}" ORDER BY id ASC'.format(arg))
+ name FROM states WHERE name="{}" ORDER BY states.id ASC'.format(arg))
     rows = cur.fetchall()
 
     for row in rows:
