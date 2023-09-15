@@ -4,7 +4,7 @@ This module prints all the states in the database using an ORM
 '''
 
 if __name__ == '__main__':
-    from model import Base, State
+    from model_state import Base, State
     from sys import argv
     import sqlalchemy
     from sqlalchemy import (create_engine)
@@ -14,10 +14,11 @@ if __name__ == '__main__':
     pwd = argv[2]
     dBase = argv[3]
 
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:\
-    3306/{}".format(username, pwd, dBase))
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+        username, pwd, dBase))
 
-    session = Session(sessionmaker(bind=engine))
+    Session = sessionmaker(bind=engine)
+    session = Session()
     states = session.query(State).order_by(State.id).all()
 
     for state in states:
