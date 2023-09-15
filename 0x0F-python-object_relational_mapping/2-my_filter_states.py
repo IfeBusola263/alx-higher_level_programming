@@ -16,8 +16,8 @@ if __name__ == '__main__':
     dataBase = MySQLdb.connect(host='localhost', port=3306,
                                user=username, passwd=pwd, db=dBase)
     cur = dataBase.cursor()
-    cur.execute("SELECT id, name FROM states WHERE name \
-    LIKE %s ORDER BY id", (arg,))
+    cur.execute('SELECT id, name FROM states WHERE name \
+    LIKE "{}" ORDER BY id'.format(arg,))
     rows = cur.fetchall()
 
     for row in rows:
