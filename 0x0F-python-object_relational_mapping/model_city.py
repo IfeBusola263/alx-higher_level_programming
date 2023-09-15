@@ -1,4 +1,4 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 '''
 This is a module for creating a cities table (Schema)
  in DBMS through an ORM
