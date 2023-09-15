@@ -3,18 +3,20 @@
 This module relates with a RDMS, with MySQLdb module.
 '''
 
-import MySQLdb
-import sys
+if __name__ == '__main__':
 
-username = sys.argv[1]
-pwd = sys.argv[2]
-dBase = sys.argv[3]
+    import MySQLdb
+    import sys
 
-dataBase = MySQLdb.connect(host='localhost', port=3306,
+    username = sys.argv[1]
+    pwd = sys.argv[2]
+    dBase = sys.argv[3]
+
+    dataBase = MySQLdb.connect(host='localhost', port=3306,
                            user=username, passwd=pwd, db=dBase)
-cur = dataBase.cursor()
-cur.execute("SELECT id, name FROM states ORDER BY id")
-rows = cur.fetchall()
+    cur = dataBase.cursor()
+    cur.execute("SELECT id, name FROM states ORDER BY id")
+    rows = cur.fetchall()
 
-for row in rows:
-    print(row)
+    for row in rows:
+        print(row)
