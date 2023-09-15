@@ -17,7 +17,7 @@ if __name__ == '__main__':
                                user=username, passwd=pwd, db=dBase)
     cur = dataBase.cursor()
     cur.execute('SELECT id, name FROM states WHERE name \
-    LIKE "{}" ORDER BY id'.format(arg,))
+    LIKE ("{}") ORDER BY id'.format(arg,))
     rows = cur.fetchall()
 
     for row in rows:
