@@ -4,12 +4,11 @@ This is a module for creating a cities table (Schema)
  in DBMS through an ORM
 '''
 
-
-# if __name__ == '__main__':
 from relationship_state import Base
 import sqlalchemy
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
+
 
 class City(Base):
     '''
