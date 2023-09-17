@@ -18,17 +18,17 @@ if __name__ == '__main__':
     dBase = argv[3]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-        username, pwd, dBase), echo=True)
+        username, pwd, dBase))
 
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_city = City(name="San Francisco")
-    new_city.state = State(name='California')
+    # new_city = City(name="San Francisco")
+    # new_city.state = State(name='California')
 
-    # new_state = State(name='California')
-    # new_state.cities = [City(name="San Francisco"),]
+    new_state = State(name='California')
+    new_state.cities = [City(name="San Francisco"),]
     session.add(new_city)
     session.commit()
     session.close()
