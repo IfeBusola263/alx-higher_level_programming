@@ -28,6 +28,6 @@ if __name__ == '__main__':
 
     # print (states_and_cities)
     for state in states_and_cities:
-         print(f'{state.id}: {state.name}')
-         for city in state.cities:
-             print(f'\t{city.id}: {city.name}')
+        print(f'{state.id}: {state.name}')
+        for city in state.cities:
+            print(f'\t{city.id}: {city.name}')
