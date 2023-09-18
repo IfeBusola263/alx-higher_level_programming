@@ -29,5 +29,5 @@ if __name__ == '__main__':
     for state in states_and_cities:
         print(f'{state.id}: {state.name}')
 
-        for city in state.cities:
-            print(f'\t{city.id}: {city.name}')
+        for site in state.cities:
+            print(f'\t{site.id}: {site.name}')
