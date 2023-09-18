@@ -23,9 +23,11 @@ if __name__ == '__main__':
     session = Session()
 
     states_and_cities = session.query(
-        State).order_by(State.id).all()
+        State).filter(State.id == City.state_id).order_by(
+            State.id, City.id).all()
 
+    # print (states_and_cities)
     for state in states_and_cities:
-        print(f'{state.id}: {state.name}')
-        for city in state.cities:
-            print(f'\t{city.id}: {city.name}')
+         print(f'{state.id}: {state.name}')
+         for city in state.cities:
+             print(f'\t{city.id}: {city.name}')
