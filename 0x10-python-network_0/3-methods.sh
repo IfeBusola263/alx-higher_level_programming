@@ -1,3 +1,3 @@
 #!/bin/bash
 # This script displays all the allowed method by the server
-curl -s -X "OPTIONS" "$1"
+curl -s -I -X "OPTIONS" "$1" | grep "ALLOW" | cut -d ":" 2
