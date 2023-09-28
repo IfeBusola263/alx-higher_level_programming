@@ -1,3 +1,3 @@
 #!/bin/bash
 # This script sents a Post request and displays the body request
-curl -s -w '%{response_code}' "$1"
+curl -o /dev/null -s -w '%{http_code}' "$1"
