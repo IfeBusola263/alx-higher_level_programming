@@ -12,7 +12,16 @@ if __name__ == '__main__':
 
     result = res.json()
 
-    for i in range(10):
-        name = result[i]["commit"]
+    i = 0
+
+    for info in result:
+        if i == 9:
+            break
+        name = info["commit"]
         name = name["author"]
-        print(f'{result[i]["sha"]}: {name["name"]}')
+        print(f'{info["sha"]}: {name["name"]}')
+
+    # for i in range(10):
+    #     name = result[i]["commit"]
+    #     name = name["author"]
+    #     print(f'{result[i]["sha"]}: {name["name"]}')
