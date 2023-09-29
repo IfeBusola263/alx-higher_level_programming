@@ -9,3 +9,4 @@ import sys
 post = urllib.request.Request(sys.argv[1], sys.argv[2].encode('ascii'))
 
 with urllib.request.urlopen(post) as response:
+    print(response)
