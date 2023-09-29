@@ -8,7 +8,7 @@ if __name__ == '__main__':
     import requests
 
     res = requests.get('https://api.github.com/repos/{}/{}/commits'.format(
-        sys.argv[1], sys.argv[2]))
+        sys.argv[2], sys.argv[1]))
 
     result = res.json()
 
