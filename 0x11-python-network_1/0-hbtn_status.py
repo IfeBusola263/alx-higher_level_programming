@@ -14,4 +14,4 @@ if __name__ == '__main__':
         #     type(form), form, msg))
         print(f'\t- type: {type(form)}')
         print(f'\t- content: {form}')
-        print(f'\t- utf8 content: {msg}')
+        print(f'\t- utf8 content: {form.decode("utf-8")}')

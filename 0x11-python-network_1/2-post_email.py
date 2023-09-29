@@ -3,10 +3,14 @@
 This module send a post request to a URL passed as argument
 """
 
-import urllib.request
-import sys
+if __name__ == '__main__':
+    import urllib.request
+    import urllib.parse
+    import sys
 
-post = urllib.request.Request(sys.argv[1], sys.argv[2].encode('ascii'))
+    data = {'email': sys.argv[2]}
+    data = urllib.parse.urlencode(data)
+    post = urllib.request.Request(sys.argv[1], data.encode('ascii'))
 
-with urllib.request.urlopen(post) as response:
-    print(response)
+    with urllib.request.urlopen(post) as response:
+        print(response.read().decode('utf-8'))
