@@ -20,6 +20,7 @@ if __name__ == '__main__':
         name = info["commit"]
         name = name["author"]
         print(f'{info["sha"]}: {name["name"]}')
+        i = i + 1
 
     # for i in range(10):
     #     name = result[i]["commit"]
