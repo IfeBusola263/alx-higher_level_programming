@@ -20,8 +20,6 @@ if __name__ == '__main__':
         if result:
             if 'id' in result and 'name' in result:
                 print('[{}] {}'.format(result['id'], result['name']))
-            else:
-                print('No result')
         else:
             print('No result')
 
