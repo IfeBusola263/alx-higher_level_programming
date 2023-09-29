@@ -4,7 +4,7 @@ This module implements a request to print the variable of the response
 """
 
 import urllib.request
-from sys import argv
+import sys
 
-with urllib.request.urlopen(argv[1]) as response:
+with urllib.request.urlopen(sys.argv[1]) as response:
     print(response.headers['X-Request-Id'])
