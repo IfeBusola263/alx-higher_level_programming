@@ -15,7 +15,7 @@ if __name__ == '__main__':
     i = 0
 
     for info in result:
-        if i == 9:
+        if i == 10:
             break
         name = info["commit"]
         name = name["author"]
