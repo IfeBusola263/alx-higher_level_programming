@@ -8,4 +8,5 @@ if __name__ == '__main__':
     import sys
 
     res = requests.get(sys.argv[1])
-    print(res.headers['X-Request-Id'])
+    if hasattr(res.headers, 'X-Request-Id'):
+        print(res.headers['X-Request-Id'])
