@@ -84,4 +84,5 @@ A script that prints all characters of a Star Wars movie:
   Display one character name by line in the same order of the list "characters" in the /films/ response
   Using the Star wars API
   Uses the module request
-``` 
+```
+[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
