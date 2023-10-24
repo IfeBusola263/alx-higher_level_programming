@@ -12,17 +12,11 @@ request(process.argv[2], (err, response, data) => {
 
     const dict = {};
 
-    for (let i = 1; i < 11; i++) {
-      let completed = 0;
-
-      for (let j = 0; j < toDo.length; j++) {
-        if (i === toDo[j].userId && toDo[j].completed === true) {
-          completed = completed + 1;
-        }
-        // console.log(to_do[j].completed);
+    toDo.forEach((task) => {
+      if (task.completed) {
+        dict[task.userId] = (dict[task.userId] || 0) + 1;
       }
-      dict[i.toString()] = completed;
-    }
+    });
     console.log(dict);
   }
 });
