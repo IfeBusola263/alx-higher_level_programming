@@ -11,7 +11,7 @@ request(api, (err, response, body) => {
 
     const characters = film.characters;
 
-      characters.forEach(async (character) => {
+    characters.forEach(async (character) => {
       await request(character, (err, response, info) => {
         if (err) {
           console.log(err);
